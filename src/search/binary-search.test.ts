@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { binarySearch } from './binary-search.mjs';
+import { binarySearch } from './binary-search.ts';
 
 describe('binarySearch', () => {
     it('should find in array', () => {
@@ -10,7 +10,7 @@ describe('binarySearch', () => {
 
         const expectedIndex = 4
 
-        assert.deepEqual(binarySearch(array, value), expectedIndex)
+        assert.deepEqual(binarySearch<number>(array, value), expectedIndex)
     })
 
     it('should not find in array', () => {
@@ -19,6 +19,6 @@ describe('binarySearch', () => {
 
         const expectedIndex = -1
 
-        assert.deepEqual(binarySearch(array, value), expectedIndex)  
+        assert.deepEqual(binarySearch<number>(array, value), expectedIndex)
     })
 })

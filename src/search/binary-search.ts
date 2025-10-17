@@ -1,4 +1,4 @@
-export const binarySearch = (array, value) => {
+export const binarySearch = <T>(array: T[], value: T): number => {
     let startIndex = 0
     let endIndex = array.length - 1
 
