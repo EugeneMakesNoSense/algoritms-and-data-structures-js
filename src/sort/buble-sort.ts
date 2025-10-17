@@ -1,4 +1,4 @@
-export const bubbleSort = (input) => {
+export const bubbleSort = <T>(input: T[]): T[] => {
     const data = structuredClone(input)
 
     if (data.length <= 1) {

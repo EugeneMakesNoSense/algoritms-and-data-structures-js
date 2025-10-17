@@ -163,7 +163,7 @@ export class LinkedList {
         return this.#size
     }
 
-    get toArray() {
+    toArray() {
         const result = []
 
         let current = this.#head

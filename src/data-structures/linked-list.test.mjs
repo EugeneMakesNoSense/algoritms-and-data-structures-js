@@ -15,7 +15,7 @@ describe('LinkedList', () => {
             list.add(4, 5)
 
             assert.equal(list.size, 5)
-            assert.deepEqual(list.toArray, [7, 5, 1, 10, 4])
+            assert.deepEqual(list.toArray(), [7, 5, 1, 10, 4])
         })
 
         it('should throw if position is not valid', () => {
@@ -71,7 +71,7 @@ describe('LinkedList', () => {
             list.remove(3)
 
             assert.equal(list.size, 3)
-            assert.deepEqual(list.toArray, [5, 10, 1])
+            assert.deepEqual(list.toArray(), [5, 10, 1])
         })
 
         it('should remove from the end of list', () => {
@@ -84,7 +84,7 @@ describe('LinkedList', () => {
             list.remove(4)
 
             assert.equal(list.size, 3)
-            assert.deepEqual(list.toArray, [5, 10, 7])
+            assert.deepEqual(list.toArray(), [5, 10, 7])
         })
 
         it('should remove from the start of list', () => {
@@ -97,7 +97,7 @@ describe('LinkedList', () => {
             list.remove(1)
 
             assert.equal(list.size, 3)
-            assert.deepEqual(list.toArray, [10, 7, 1])
+            assert.deepEqual(list.toArray(), [10, 7, 1])
         })
 
         it('should remove till the list is empty', () => {
@@ -109,7 +109,7 @@ describe('LinkedList', () => {
             list.remove(1)
 
             assert.equal(list.size, 0)
-            assert.deepEqual(list.toArray, [])
+            assert.deepEqual(list.toArray(), [])
         })
     })
 
@@ -122,7 +122,7 @@ describe('LinkedList', () => {
             list.add(7, 3)
             list.add(1, 4)
 
-            assert.deepEqual(list.toArray, [5, 10, 7, 1])
+            assert.deepEqual(list.toArray(), [5, 10, 7, 1])
             assert.equal(list.find(7), 3)
             assert.equal(list.find(70), -1)
         })

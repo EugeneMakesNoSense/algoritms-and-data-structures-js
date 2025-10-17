@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { QuickSort } from './quick-sort.mjs';
+import { QuickSort } from './quick-sort.ts';
 
 describe('QuickSort', () => {
     it('should sort array', () => {
@@ -10,7 +10,7 @@ describe('QuickSort', () => {
 
         const quickSort = new QuickSort()
 
-        assert.deepEqual(quickSort.sort(input), expected)
+        assert.deepEqual(quickSort.sort<number>(input), expected)
     })
 
     it('should return if one item in the array', () => {
@@ -18,6 +18,6 @@ describe('QuickSort', () => {
 
         const quickSort = new QuickSort()
 
-        assert.deepEqual(quickSort.sort(array), array)
+        assert.deepEqual(quickSort.sort<number>(array), array)
     })
 })

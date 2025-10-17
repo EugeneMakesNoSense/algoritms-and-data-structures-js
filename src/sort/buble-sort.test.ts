@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { bubbleSort } from './buble-sort.mjs';
+import { bubbleSort } from './buble-sort.ts';
 
 describe('bubbleSort', () => {
     it('should sort array', () => {
@@ -9,12 +9,12 @@ describe('bubbleSort', () => {
 
         const expected = [2, 3, 5, 6, 12, 15]
 
-        assert.deepEqual(bubbleSort(input), expected)
+        assert.deepEqual(bubbleSort<number>(input), expected)
     })
 
     it('should return if one item in array', () => {
         const array = [2]
 
-        assert.deepEqual(bubbleSort(array), array)
+        assert.deepEqual(bubbleSort<number>(array), array)
     })
 })
