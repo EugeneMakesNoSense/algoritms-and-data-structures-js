@@ -8,16 +8,12 @@ describe('QuickSort', () => {
         const input = [2, 6, 3, 15, 12, 5]
         const expected = [2, 3, 5, 6, 12, 15]
 
-        const quickSort = new QuickSort()
-
-        assert.deepEqual(quickSort.sort<number>(input), expected)
+        assert.deepEqual(QuickSort.sort<number>(input), expected)
     })
 
     it('should return if one item in the array', () => {
         const array = [2]
 
-        const quickSort = new QuickSort()
-
-        assert.deepEqual(quickSort.sort<number>(array), array)
+        assert.deepEqual(QuickSort.sort<number>(array), array)
     })
 })
