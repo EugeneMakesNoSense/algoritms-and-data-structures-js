@@ -1,0 +1,26 @@
+{
+  "name": "algoritms-and-data-structures",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EugeneMakesNoSense/algoritms-and-data-structures-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugeneMakesNoSense/algoritms-and-data-structures-js/issues"
+  },
+  "homepage": "https://github.com/EugeneMakesNoSense/algoritms-and-data-structures-js#readme",
+  "devDependencies": {
+    "@types/node": "^24.8.1"
+  }
+}
