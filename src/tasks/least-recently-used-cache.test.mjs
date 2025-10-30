@@ -16,7 +16,7 @@ describe('LeastRecentlyUsedCache', () => {
                 lru.update('6', 6)
                 lru.update('3', 7)
 
-                assert.deepEqual(lru.toArray, [7, 6, 5, 4, 2])
+                assert.deepEqual(lru.toArray(), [7, 6, 5, 4, 2])
         })
     })
 
@@ -31,7 +31,7 @@ describe('LeastRecentlyUsedCache', () => {
                 lru.update('5', 5)
 
                 assert.equal(lru.get('3'), 3)
-                assert.deepEqual(lru.toArray, [3, 5, 4, 2, 1])
+                assert.deepEqual(lru.toArray(), [3, 5, 4, 2, 1])
         })
     })
 })

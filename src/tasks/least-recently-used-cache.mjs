@@ -119,7 +119,7 @@ export class LeastRecentlyUsedCache {
         }
     }
 
-    get toArray() {
+    toArray() {
         const result = []
 
         let current = this.#head

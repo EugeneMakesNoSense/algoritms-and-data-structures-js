@@ -1,7 +1,6 @@
 {
   "name": "algoritms-and-data-structures",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "node --test"
   },
