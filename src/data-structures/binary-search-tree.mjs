@@ -68,15 +68,14 @@ export class BinarySearchTree {
     }
 
     #depthFirsTraversalRecursive(node, result) {
+        if (!node) {
+            return
+        }
+
         result.push(node.value)
 
-        if (node.left) {
-            this.#depthFirsTraversalRecursive(node.left, result)
-        }
-
-        if (node.right) {
-            this.#depthFirsTraversalRecursive(node.right, result)
-        }
+        this.#depthFirsTraversalRecursive(node.left, result)
+        this.#depthFirsTraversalRecursive(node.right, result)
     }
 
     depthFirstTraversal() {
