@@ -20,21 +20,20 @@ export const getFibonacciNumberTopDown = (
 };
 
 export const getFibonacciNumberBottomUp = (number: number): number => {
-  const numbers = [0, 1];
-
-  if (number === 1) {
-    return numbers[0];
+  if (number < 2) {
+    return number - 1;
   }
 
-  if (number === 2) {
-    return numbers[1];
-  }
+  let a = 0;
+  let b = 1;
 
   for (let i = 2; i <= number; i++) {
-    numbers.push(numbers[i - 1] + numbers[i - 2]);
+    const result = a + b
+    a = b 
+    b = result
   }
 
-  return numbers[numbers.length - 1];
+  return b;
 };
 
 export const getFibonacciSequence = (number: number): number[] => {
