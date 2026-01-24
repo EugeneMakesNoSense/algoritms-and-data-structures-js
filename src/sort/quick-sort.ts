@@ -1,49 +1,71 @@
 export class QuickSort {
-    public static sort<T>(data: T[]): T[] {
-        if (data.length <= 1) {
-            return data
+  public static sort<T>(data: T[]): T[] {
+    if (data.length <= 1) {
+      return data;
+    }
+
+    const clonedData = structuredClone(data);
+
+    return this.recursion<T>(clonedData, 0, clonedData.length - 1);
+  }
+
+  private static recursion<T>(
+    data: T[],
+    startIndex: number,
+    endIndex: number,
+  ): T[] {
+    if (startIndex >= endIndex) {
+      return data;
+    }
+
+    const pivotIndex = this.partitioning<T>(data, startIndex, endIndex);
+
+    this.recursion<T>(data, startIndex, pivotIndex - 1);
+    this.recursion<T>(data, pivotIndex + 1, endIndex);
+
+    return data;
+  }
+
+  public static partitioning<T>(
+    data: T[],
+    leftPointer: number,
+    rightPointer: number,
+  ): number {
+    const pivotIndex = rightPointer;
+    const pivot = data[pivotIndex];
+
+    rightPointer -= 1;
+
+    while (true) {
+      while (data[leftPointer] < pivot) {
+        leftPointer += 1;
+      }
+
+      while (data[rightPointer] > pivot) {
+        if (rightPointer <= 0) {
+          break;
         }
 
-        const clonedData = structuredClone(data)
+        rightPointer -= 1;
+      }
 
-        return this.recursion<T>(clonedData, 0, clonedData.length - 1)
+      if (leftPointer >= rightPointer) {
+        break;
+      }
+
+      [data[leftPointer], data[rightPointer]] = [
+        data[rightPointer],
+        data[leftPointer],
+      ];
+
+      leftPointer += 1;
     }
 
-    private static recursion<T>(data: T[], startIndex: number, endIndex: number): T[] {
-        if (startIndex >= endIndex) {
-            return data
-        }
+    [data[leftPointer], data[pivotIndex]] = [
+      data[pivotIndex],
+      data[leftPointer],
+    ];
 
-        const pivotIndex = this.partitioning<T>(data, startIndex, endIndex)
-
-        this.recursion<T>(data, startIndex, pivotIndex - 1)
-        this.recursion<T>(data, pivotIndex + 1, endIndex)
-
-        return data
-    }
-
-    private static partitioning<T>(data: T[], startIndex: number, endIndex: number): number {
-        const pivot = data[endIndex]
-
-        let carriage = startIndex - 1
-
-        for (let i = startIndex; i < endIndex; i++) {
-            if (data[i] <= pivot) {
-                carriage++
-                this.swap<T>(data, carriage, i)
-            }
-        }
-
-        carriage++
-        this.swap<T>(data, endIndex, carriage)
-
-        return carriage
-    }
-
-    private static swap<T>(data: T[], firstIndex: number, secondIndex: number) {
-        const temp = data[firstIndex]
-
-        data[firstIndex] = data[secondIndex]
-        data[secondIndex] = temp
-    }
+    return leftPointer;
+  }
 }

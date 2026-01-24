@@ -13,9 +13,7 @@ export const selectionSort = <T>(input: T[]): T[] => {
         }
 
         if (lowestItemIndex !== i) {
-            const temp = data[i]
-            data[i] = data[lowestItemIndex]
-            data[lowestItemIndex] = temp
+            [data[i], data[lowestItemIndex]] = [data[lowestItemIndex], data[i]]
         }
     }
 
