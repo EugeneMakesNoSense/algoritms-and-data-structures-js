@@ -6,7 +6,7 @@ class Node {
     }
 }
 
-export class LinkedList {
+export class DoublyLinkedList {
     #head = null
     #tail = null
     #size = 0

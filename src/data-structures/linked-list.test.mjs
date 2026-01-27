@@ -1,12 +1,12 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { LinkedList } from './linked-list.mjs';
+import { DoublyLinkedList } from './linked-list.mjs';
 
-describe('LinkedList', () => {
+describe('DoublyLinkedList', () => {
     describe('add', () => {
         it('should add', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(5, 1)
             list.add(10, 2)
@@ -19,7 +19,7 @@ describe('LinkedList', () => {
         })
 
         it('should throw if position is not valid', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             assert.throws(() => list.add(1, 2))
         })
@@ -27,7 +27,7 @@ describe('LinkedList', () => {
 
     describe('pick', () => {
         it('should pick first', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(7, 1)
             list.add(9, 2)
@@ -38,7 +38,7 @@ describe('LinkedList', () => {
         })
 
         it('should pick last', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(7, 1)
             list.add(9, 2)
@@ -49,7 +49,7 @@ describe('LinkedList', () => {
         })
 
         it('should pick middle', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(7, 1)
             list.add(9, 2)
@@ -62,7 +62,7 @@ describe('LinkedList', () => {
 
     describe('remove', () => {
         it('should remove from the middle of list', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(5, 1)
             list.add(10, 2)
@@ -75,7 +75,7 @@ describe('LinkedList', () => {
         })
 
         it('should remove from the end of list', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(5, 1)
             list.add(10, 2)
@@ -88,7 +88,7 @@ describe('LinkedList', () => {
         })
 
         it('should remove from the start of list', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(5, 1)
             list.add(10, 2)
@@ -101,7 +101,7 @@ describe('LinkedList', () => {
         })
 
         it('should remove till the list is empty', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(7, 1)
             list.add(9, 2)
@@ -115,7 +115,7 @@ describe('LinkedList', () => {
 
     describe('find', () => {
         it('should find in list', () => {
-            const list = new LinkedList()
+            const list = new DoublyLinkedList()
 
             list.add(5, 1)
             list.add(10, 2)

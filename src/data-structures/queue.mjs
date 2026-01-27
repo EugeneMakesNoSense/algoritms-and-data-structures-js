@@ -1,10 +1,10 @@
-import { LinkedList } from "./linked-list.mjs";
+import { DoublyLinkedList } from "./linked-list.mjs";
 
 export class Queue {
     #linkedList
 
     constructor() {
-        this.#linkedList = new LinkedList()
+        this.#linkedList = new DoublyLinkedList()
     }
 
     enqueue(value) {
