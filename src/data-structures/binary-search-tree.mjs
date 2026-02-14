@@ -72,9 +72,8 @@ export class BinarySearchTree {
             return
         }
 
-        result.push(node.value)
-
         this.#depthFirsTraversalRecursive(node.left, result)
+        result.push(node.value)
         this.#depthFirsTraversalRecursive(node.right, result)
     }
 
@@ -116,7 +115,7 @@ export class BinarySearchTree {
         // find node
         // delete if no children
         // replace with children if one
-        // if two: 
+        // if two:
         // * find the last right in the left subtree or with the last left in the right subtree
         // * set instead of one you want to remove 
     }

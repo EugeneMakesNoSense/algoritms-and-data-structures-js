@@ -25,7 +25,7 @@ describe('MinHeap', () => {
             heap.insert(20)
             heap.insert(30)
             heap.insert(5)
-            heap.pop()
+            heap.pick()
     
             assert.deepEqual(heap.data, [10, 20, 30])
         })

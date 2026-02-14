@@ -15,7 +15,7 @@ describe('BinarySearchTree', () => {
             tree.insert(1)
 
             const expectedBreadthFirst = [10, 5, 40, 3, 1]
-            const expectedDeepFirst = [10, 5, 3, 1, 40]
+            const expectedDeepFirst = [1, 3, 5, 10, 40]
 
             assert.deepEqual(tree.breadthFirstTraversal(), expectedBreadthFirst)
             assert.deepEqual(tree.depthFirstTraversal(), expectedDeepFirst)

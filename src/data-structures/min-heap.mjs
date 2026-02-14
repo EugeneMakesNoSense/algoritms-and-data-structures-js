@@ -73,7 +73,7 @@ export class MinHeap {
         this.#heapifyUp()
     }
 
-    pop() {
+    pick() {
         if (this.#data.length === 0) {
             return null
         }
